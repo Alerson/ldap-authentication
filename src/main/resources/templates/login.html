@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+<link href="/css/bootstrap.min.css" rel="stylesheet" />
+<link href="/css/font-awesome.min.css" rel="stylesheet" />
+<link href="/css/bootstrap-custom.css" rel="stylesheet" />
+<link href="/css/css_custom_mine.css" rel="stylesheet" />
+<link href="/css/custom.css" rel="stylesheet" />
+<link href="/css/bootstrap-toggle.min.css" rel="stylesheet" />
+<link href="/css/dataTables.bootstrap4.min.css" rel="stylesheet" />
+
+<script src="/js/jquery.min.js"></script>
+<script src="/js/popper.min.js"></script>
+<script src="/js/jquery-3.3.1.js"></script>
+<script src="/js/bootstrap-toggle.min.js"></script>
+
+</head>
+
+<body>
+
+	<div class="container-fluid" style="display: block;">
+		<div class="wrapper fadeInDown">
+			<div id="formContent">
+				<!-- Tabs Titles -->
+	
+				<!-- Icon -->
+				<div class="fadeIn first">
+					<!-- <img style="width: 100px;margin-top: 30px;margin-left: 185px;" class="img-responsive pull-left" src="/images/amdocs_logo.png" id="icon" alt="User Icon" > -->
+					<!-- <label th:text="#{screen.contextstoreidpage.col.linkhome}" ></label> -->
+				</div>
+
+				<!-- Login Form -->
+				<form th:action="@{/login}" method="post" >
+					<input type="text" id="username" class="fadeIn second" name="username" placeholder="User Name">
+					<input type="password" id="password" class="fadeIn third" name="password" placeholder="Password">
+					<input type="submit" style="color: #ffffff;background-color: #2f2d43;border-color: #242334;" class="btn btn-primary" value="Log In">
+					<!-- <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" /> -->
+				</form>
+
+				<!-- LOGIN MESSAGE ERROR -->
+				<div th:if="${param.error}">
+					<div class="alert alert-danger" style="margin-top: -30px;">
+						<strong th:text="#{screen.login.messageLoginError}"></strong>
+					</div>
+				</div>
+
+				<!-- LOGOUT MESSAGE SUCCESS -->
+				<div th:if="${param.logout}">
+					<div class="alert alert-info" style="margin-top: -30px;">
+						<strong th:text="#{screen.login.messageLogout}"></strong>
+					</div>
+				</div>
+	
+				<!-- Footer -->
+				<div id="formFooter">
+					<div style="margin-left: 140px;">
+						<img style="width: 19px;" class="img-responsive pull-left" src="/images/copyright.png" id="icon" alt="User Icon" >
+					</div>
+					<div style="margin-right: 120px;margin-top: 2px;">
+						<strong th:text="#{screen.login.copyright}"></strong>
+					</div>
+				</div>
+	
+			</div>
+		</div>
+	</div>
+
+</body>
+
+</html>

@@ -1,0 +1,17 @@
+{"properties": [
+  {
+    "name": "spring.ldap.base-dn",
+    "type": "java.lang.String",
+    "description": "A description for 'spring.ldap.base-dn'"
+  },
+  {
+    "name": "spring.ldap.search",
+    "type": "java.lang.String",
+    "description": "A description for 'spring.ldap.search'"
+  },
+  {
+    "name": "spring.ldap.search-filter",
+    "type": "java.lang.String",
+    "description": "A description for 'spring.ldap.search-filter'"
+  }
+]}
