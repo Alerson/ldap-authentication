@@ -57,7 +57,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 		.and()
 			.formLogin().loginPage("/login").defaultSuccessUrl("/logged", true)
 		.and()
-			.logout()
+			.logout().invalidateHttpSession(true)
 		.and()
 			.csrf().disable();
 	}
